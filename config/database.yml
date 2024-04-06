@@ -1,5 +1,5 @@
 default: &default
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: <%= ENV.fetch("DB_USER") %>
@@ -10,7 +10,7 @@ default: &default
     - FOUND_ROWS
     - MULTI_STATEMENTS
   secure_auth: false
-  port: 3306
+  port: 5432
 
 development:
   <<: *default
